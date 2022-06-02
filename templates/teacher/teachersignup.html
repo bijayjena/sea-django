@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  {% include "quiz/navbar.html" %}
+  <main class="mt-5 pt-5">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="../../static/image/draw2.webp" class="img-fluid" alt="LogIn Page">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form method="POST" autocomplete="off" enctype="multipart/form-data">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="username">Username</label>
+                {% render_field userForm.username|attr:'required:true'  class="form-control" placeholder="username" %}
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                {% render_field userForm.password|attr:'required:true'  class="form-control" placeholder="password" %}
+              </div>
+            </div>
+          
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="first_name">First Name</label>
+              {% render_field userForm.first_name|attr:'required:true'  class="form-control" placeholder="First Name" %}
+            </div>
+            <div class="form-group col-md-6">
+              <label for="last_name">Last Name</label>
+              {% render_field userForm.last_name|attr:'required:true'  class="form-control" placeholder="Last Name" %}
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="mobile">Mobile</label>
+              {% render_field teacherForm.mobile|attr:'required:true'  class="form-control" placeholder="Mobile" %}
+            </div>
+            <div class="form-group col-md-6">
+              <label for="address">Address</label>
+              {% render_field teacherForm.address|attr:'required:true'  class="form-control" placeholder="Address" %}
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="profile_pic">Profile Picture</label>
+              {% render_field teacherForm.profile_pic|attr:'required:true' class="form-control" placeholder="" %}
+            </div>
+          </div>
+          
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary btn-lg" id="logButton">Register</button>
+            <a href="/student/studentsignup" class="btn btn-danger btn-lg" id="logButton" role="button">Student Registration</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
